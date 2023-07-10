@@ -43,32 +43,32 @@ export function Navigation() {
 
       <div className="flex justify-center mt-3">
         {activeLink === "/usuario" && (
-          <button className="bg-indigo-500 px-3 py-2 rounded-lg mr-2">
+          <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mb-4">
             <Link to="/usuario-create">Crear Usuario</Link>
           </button>
         )}
         {activeLink === "/muralista" && (
-          <button className="bg-indigo-500 px-3 py-2 rounded-lg mr-2">
+          <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mb-4">
             <Link to="/muralista-create">Crear Muralista</Link>
           </button>
         )}
         {activeLink === "/mural" && (
-          <button className="bg-indigo-500 px-3 py-2 rounded-lg mr-2">
+          <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mb-4">
             <Link to="/mural-create">Crear Mural</Link>
           </button>
         )}
         {activeLink === "/color" && (
-          <button className="bg-indigo-500 px-3 py-2 rounded-lg mr-2">
+          <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mb-4">
             <Link to="/color-create">Crear Color</Link>
           </button>
         )}
         {activeLink === "/paleta" && (
-          <button className="bg-indigo-500 px-3 py-2 rounded-lg mr-2">
+          <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mb-4">
             <Link to="/paleta-create">Crear Paleta</Link>
           </button>
         )}
         {activeLink === "/scan" && (
-          <button className="bg-indigo-500 px-3 py-2 rounded-lg mr-2">
+          <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mb-4">
             <Link to="/scan-create">Crear Scan</Link>
           </button>
         )}

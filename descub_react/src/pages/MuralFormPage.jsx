@@ -135,7 +135,7 @@ export function MuralFormPage() {
         >
           {muralistas.map((muralista) => (
             <option key={muralista.id} value={muralista.id}>
-              {muralista.id}
+              {muralista.nombre}
             </option>
           ))}
         </select>

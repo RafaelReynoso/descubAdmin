@@ -84,7 +84,7 @@ export function ScanFormPage() {
         >
           {murales.map((mural) => (
             <option key={mural.id} value={mural.id}>
-              {mural.id}
+              {mural.nombre}
             </option>
           ))}
         </select>
@@ -96,7 +96,7 @@ export function ScanFormPage() {
         >
           {usuarios.map((usuario) => (
             <option key={usuario.id} value={usuario.id}>
-              {usuario.id}
+              {usuario.nombre}
             </option>
           ))}
         </select>

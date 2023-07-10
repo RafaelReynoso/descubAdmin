@@ -75,7 +75,7 @@ export function PaletaFormPage() {
         >
           {murales.map((mural) => (
             <option key={mural.id} value={mural.id}>
-              {mural.id}
+              {mural.nombre}
             </option>
           ))}
         </select>
@@ -87,7 +87,7 @@ export function PaletaFormPage() {
         >
           {colores.map((color) => (
             <option key={color.id} value={color.id}>
-              {color.id}
+              {color.nombre}
             </option>
           ))}
         </select>

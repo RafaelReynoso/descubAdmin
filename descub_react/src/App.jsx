@@ -34,6 +34,11 @@ function App() {
 
           {/* HOME */}
 
+          <Route
+            path="/"
+            element={<Navigate to="/home" replace />}
+          ></Route>
+
           <Route path="/home" element={<Home></Home>}></Route>
 
           {/* USUARIO */}

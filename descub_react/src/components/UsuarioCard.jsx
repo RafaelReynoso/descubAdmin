@@ -1,31 +1,29 @@
-import { useNavigate } from 'react-router-dom'
+// UsuarioCard.jsx
+import { useNavigate } from 'react-router-dom';
 
 export function UsuarioCard({ usuario }) {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
-    <div className="bg-zinc-800 p3 hover:bg-zinc-700 hover:cursor-pointer mt-5"
-
-    onClick={()=>{
-      navigate('/usuario/' + usuario.id)
-    }}
-    
-    >
-      <h1 className='font-bold upper'>Nombre:</h1>
-      <p className='text-slate-400'>{usuario.nombre}</p>
-      <h1 className='font-bold upper'>Apellidos:</h1>
-      <p className='text-slate-400'>{usuario.apellidos}</p>
-      <h1 className='font-bold upper'>Usuario:</h1>
-      <p className='text-slate-400'>{usuario.usuario}</p>
-      <h1 className='font-bold upper'>Email:</h1>
-      <p className='text-slate-400'>{usuario.email}</p>
-      <h1 className='font-bold upper'>Contraseña:</h1>
-      <p className='text-slate-400'>{usuario.contrasena}</p>
-      <h1 className='font-bold upper'>Fecha de Registro:</h1>
-      <p className='text-slate-400'>{usuario.fecha_registro}</p>
-      <hr />
-    </div>
+    <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+      <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        {usuario.nombre}
+      </td>
+      <td className="px-6 py-4">{usuario.apellidos}</td>
+      <td className="px-6 py-4">{usuario.usuario}</td>
+      <td className="px-6 py-4">{usuario.email}</td>
+      <td className="px-6 py-4">{usuario.contrasena}</td>
+      <td className="px-6 py-4">{usuario.fecha_registro}</td>
+      <td className="px-6 py-4">
+        <button
+          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+          onClick={() => {
+            navigate('/usuario/' + usuario.id);
+          }}
+        >
+          Detalles
+        </button>
+      </td>
+    </tr>
   );
 }
-
