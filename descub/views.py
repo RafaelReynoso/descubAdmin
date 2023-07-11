@@ -1,4 +1,4 @@
-from rest_framework import viewsets
+from rest_framework import viewsets, parsers
 from .serializer import *
 from .models import *
 
@@ -11,6 +11,7 @@ class UsuarioView(viewsets.ModelViewSet):
 class MuralistaView(viewsets.ModelViewSet):
     serializer_class = MuralistaSerializer
     queryset = Muralista.objects.all()
+    
 
 
 class MuralView(viewsets.ModelViewSet):

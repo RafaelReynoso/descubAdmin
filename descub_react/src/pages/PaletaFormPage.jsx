@@ -87,7 +87,7 @@ export function PaletaFormPage() {
         >
           {colores.map((color) => (
             <option key={color.id} value={color.id}>
-              {color.nombre}
+              {color.codigo}
             </option>
           ))}
         </select>

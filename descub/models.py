@@ -10,9 +10,7 @@ class Usuario(models.Model):
     id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=100)
     apellidos = models.CharField(max_length=200)
-    usuario = models.CharField(max_length=50)
     email = models.CharField(max_length=250)
-    contrasena = models.CharField(max_length=60)
     fecha_registro = models.DateField()
 
     def __str__(self):
@@ -24,7 +22,7 @@ class Muralista(models.Model):
     nombre = models.CharField(max_length=100)
     apellidos = models.CharField(max_length=200)
     seudonimo = models.CharField(max_length=100)
-    foto = models.BinaryField(null=True, max_length=10485760)
+    foto = models.BinaryField(null=True)
     celular = models.CharField(max_length=9)
     user_instagram = models.CharField(max_length=30)
     user_facebook = models.CharField(max_length=50)
@@ -33,15 +31,7 @@ class Muralista(models.Model):
     def __str__(self):
         return f"Muralista #{self.nombre}"
     
-    def get_foto_url(self):
-        if self.foto:
-            image = Image.open(BytesIO(self.foto))
-            buffered = BytesIO()
-            image.save(buffered, format="JPEG")
-            img_str = base64.b64encode(buffered.getvalue()).decode()
-            return f"data:image/jpeg;base64,{img_str}"
-        else:
-            return None
+
 
 class Mural(models.Model):
     id = models.AutoField(primary_key=True)
@@ -59,35 +49,7 @@ class Mural(models.Model):
     def __str__(self):
         return f"Mural #{self.nombre}"
     
-    def get_imagen1_url(self):
-        if self.imagen1:
-            image = Image.open(BytesIO(self.imagen1))
-            buffered = BytesIO()
-            image.save(buffered, format="JPEG")
-            img_str = base64.b64encode(buffered.getvalue()).decode()
-            return f"data:image/jpeg;base64,{img_str}"
-        else:
-            return None
-        
-    def get_imagen2_url(self):
-        if self.imagen2:
-            image = Image.open(BytesIO(self.imagen2))
-            buffered = BytesIO()
-            image.save(buffered, format="JPEG")
-            img_str = base64.b64encode(buffered.getvalue()).decode()
-            return f"data:image/jpeg;base64,{img_str}"
-        else:
-            return None
-        
-    def get_imagen3_url(self):
-        if self.imagen3:
-            image = Image.open(BytesIO(self.imagen3))
-            buffered = BytesIO()
-            image.save(buffered, format="JPEG")
-            img_str = base64.b64encode(buffered.getvalue()).decode()
-            return f"data:image/jpeg;base64,{img_str}"
-        else:
-            return None
+    
 
 class Color(models.Model):
     id = models.AutoField(primary_key=True)

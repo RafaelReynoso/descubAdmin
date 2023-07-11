@@ -108,7 +108,7 @@ export function MuralCard({ mural }) {
       <div className="flex flex-col items-start">
         <h1 className="text-2xl font-bold text-white mb-2">Muralista:</h1>
         <p className="text-slate-400">
-          {muralista ? muralista.nombre : "Cargando..."}
+          {muralista ? muralista.seudonimo : "Cargando..."}
         </p>
       </div>
     </div>

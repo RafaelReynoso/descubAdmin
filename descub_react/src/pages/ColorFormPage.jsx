@@ -80,6 +80,17 @@ export function ColorFormPage() {
         </div>
 
         <div className="flex flex-col">
+          <label htmlFor="green" className="text-sm font-medium text-gray-700">GREEN</label>
+          <input
+            type="text"
+            id="green"
+            {...register("green", { required: true })}
+            className="bg-zinc-700 p-3 rounded-lg block w-full"
+          />
+          {errors.green && <span className="text-red-500 text-sm">Este campo es requerido</span>}
+        </div>
+
+        <div className="flex flex-col">
           <label htmlFor="blue" className="text-sm font-medium text-gray-700">BLUE</label>
           <input
             type="text"
@@ -90,16 +101,7 @@ export function ColorFormPage() {
           {errors.blue && <span className="text-red-500 text-sm">Este campo es requerido</span>}
         </div>
 
-        <div className="flex flex-col">
-          <label htmlFor="green" className="text-sm font-medium text-gray-700">GREEN</label>
-          <input
-            type="text"
-            id="green"
-            {...register("green", { required: true })}
-            className="bg-zinc-700 p-3 rounded-lg block w-full"
-          />
-          {errors.green && <span className="text-red-500 text-sm">Este campo es requerido</span>}
-        </div>
+        
 
         <button className="bg-green-500 p-3 rounded-lg block w-full text-white font-medium">
           Guardar

@@ -10,9 +10,7 @@ export function UsuarioCard({ usuario }) {
         {usuario.nombre}
       </td>
       <td className="px-6 py-4">{usuario.apellidos}</td>
-      <td className="px-6 py-4">{usuario.usuario}</td>
       <td className="px-6 py-4">{usuario.email}</td>
-      <td className="px-6 py-4">{usuario.contrasena}</td>
       <td className="px-6 py-4">{usuario.fecha_registro}</td>
       <td className="px-6 py-4">
         <button

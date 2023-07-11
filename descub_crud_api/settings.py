@@ -83,10 +83,10 @@ WSGI_APPLICATION = 'descub_crud_api.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'descubadmin',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost', 
+        'NAME': 'descubdb',
+        'USER': 'admin',
+        'PASSWORD': 'descub2023',
+        'HOST': 'descub.c0qtlsipdutt.us-east-1.rds.amazonaws.com', 
         'PORT': '3306',  
     }
 }
@@ -140,6 +140,11 @@ CORS_ALLOWED_ORIGINS = [
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
 }
+
+FILE_UPLOAD_HANDLERS = [
+    'django.core.files.uploadhandler.MemoryFileUploadHandler',
+    'django.core.files.uploadhandler.TemporaryFileUploadHandler',
+]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

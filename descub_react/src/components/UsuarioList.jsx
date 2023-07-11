@@ -26,13 +26,7 @@ export function UsuarioList() {
               Apellidos
             </th>
             <th scope="col" className="px-6 py-3">
-              Usuario
-            </th>
-            <th scope="col" className="px-6 py-3">
               Email
-            </th>
-            <th scope="col" className="px-6 py-3">
-              Contraseña
             </th>
             <th scope="col" className="px-6 py-3">
               Fecha de Registro

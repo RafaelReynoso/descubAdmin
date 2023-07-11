@@ -19,16 +19,18 @@ export function MuralistaFormPage() {
   const navigate = useNavigate();
   const params = useParams();
 
+
   const onSubmit = handleSubmit(async (data) => {
     const formData = new FormData();
+
     formData.append("nombre", data.nombre);
     formData.append("apellidos", data.apellidos);
     formData.append("seudonimo", data.seudonimo);
-    formData.append("foto", data.foto[0]);
     formData.append("celular", data.celular);
     formData.append("user_instagram", data.user_instagram);
     formData.append("user_facebook", data.user_facebook);
     formData.append("email", data.email);
+    formData.append("foto",data.foto[0])
 
     if (params.id) {
       await updateMuralista(params.id, formData);
@@ -52,6 +54,7 @@ export function MuralistaFormPage() {
         setValue("user_instagram", res.data.user_instagram);
         setValue("user_facebook", res.data.user_facebook);
         setValue("email", res.data.email);
+        setValue("foto", res.data.foto);
       }
     }
     loadMuralista();
@@ -59,7 +62,7 @@ export function MuralistaFormPage() {
 
   return (
     <div className="max-w-xl mx-auto mt-5">
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} encType="multipart/form-data">
         <div className="relative z-0 w-full mb-6 group">
           <input
             type="text"
@@ -115,6 +118,7 @@ export function MuralistaFormPage() {
         <div className="relative z-0 w-full mb-6 group">
           <input
             type="file"
+            
             {...register("foto", { required: true })}
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
           />

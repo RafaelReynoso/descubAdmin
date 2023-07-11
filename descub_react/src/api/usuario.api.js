@@ -16,6 +16,9 @@ export const updateUsuario = (id, usuario) => usuarioApi.put('/' + id + '/', usu
 //MURALISTA
 const muralistaApi = axios.create({
   baseURL: "http://localhost:8000/descub/api/v1/muralista/",
+  headers: {
+    'Content-Type': 'multipart/form-data' // Agrega este encabezado para enviar FormData
+  }
 });
 
 export const getAllMuralista = () => muralistaApi.get("/");

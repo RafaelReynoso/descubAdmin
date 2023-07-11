@@ -29,7 +29,9 @@ export function MuralFormPage() {
         setValue("nombre", res.data.nombre);
         setValue("direccion", res.data.direccion);
         setValue("fecha_creacion", res.data.fecha_creacion);
-        setValue("imagen", res.data.imagen);
+        setValue("imagen1", res.data.imagen1);
+        setValue("imagen2", res.data.imagen2);
+        setValue("imagen3", res.data.imagen3);
         setValue("descripcion", res.data.descripcion);
         setValue("latitud", res.data.latitud);
         setValue("altitud", res.data.altitud);
@@ -52,7 +54,9 @@ export function MuralFormPage() {
     formData.append("nombre", data.nombre);
     formData.append("direccion", data.direccion);
     formData.append("fecha_creacion", data.fecha_creacion);
-    formData.append("imagen", data.imagen[0]);
+    formData.append("imagen1", data.imagen1[0]);
+    formData.append("imagen2", data.imagen2[0]);
+    formData.append("imagen3", data.imagen3[0]);
     formData.append("descripcion", data.descripcion);
     formData.append("latitud", data.latitud);
     formData.append("altitud", data.altitud);
@@ -98,10 +102,22 @@ export function MuralFormPage() {
 
         <input
           type="file"
-          {...register("imagen", { required: true })}
+          {...register("imagen1", { required: true })}
           className="bg-zinc-700 p-3 rounded-lg block w-full mb-3"
         />
-        {errors.imagen && <span>Este campo es requerido</span>}
+        {errors.imagen1 && <span>Este campo es requerido</span>}
+        <input
+          type="file"
+          {...register("imagen2", { required: true })}
+          className="bg-zinc-700 p-3 rounded-lg block w-full mb-3"
+        />
+        {errors.imagen2 && <span>Este campo es requerido</span>}
+        <input
+          type="file"
+          {...register("imagen3", { required: true })}
+          className="bg-zinc-700 p-3 rounded-lg block w-full mb-3"
+        />
+        {errors.imagen3 && <span>Este campo es requerido</span>}
 
         <input
           type="text"
@@ -135,7 +151,7 @@ export function MuralFormPage() {
         >
           {muralistas.map((muralista) => (
             <option key={muralista.id} value={muralista.id}>
-              {muralista.nombre}
+              {muralista.seudonimo}
             </option>
           ))}
         </select>

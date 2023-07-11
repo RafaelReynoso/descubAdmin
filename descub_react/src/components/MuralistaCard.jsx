@@ -3,19 +3,14 @@ import React, { useState, useEffect } from "react";
 
 export function MuralistaCard({ muralista }) {
   const navigate = useNavigate();
-  const [fotoUrl, setFotoUrl] = useState(null);
+  const [fotoUrl, setFotoUrl] = useState(muralista.foto);
+ 
 
   const handleClick = () => {
     navigate(`/muralista/${muralista.id}`);
   };
 
-  useEffect(() => {
-    if (muralista.foto) {
-      const base64Image = `data:image/jpeg;base64,${muralista.foto}`;
-      setFotoUrl(base64Image);
-    }
-  }, [muralista.foto]);
-
+ 
   
 
   return (
@@ -25,7 +20,7 @@ export function MuralistaCard({ muralista }) {
     >
       <div className="flex items-center justify-center">
         <img
-          src={fotoUrl}
+          src={`data:image/jpeg;base64,${fotoUrl}`}
           alt="Foto del muralista"
           className="w-32 h-32 object-cover rounded-full border-4 border-zinc-500"
         />
