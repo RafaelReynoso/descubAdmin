@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 export function MuralCard({ mural }) {
   const navigate = useNavigate();
   const [muralista, setMuralista] = useState(null);
-  const [imagenUrl1, setImagenUrl1] = useState(null);
-  const [imagenUrl2, setImagenUrl2] = useState(null);
-  const [imagenUrl3, setImagenUrl3] = useState(null);
+  const [imagenUrl1, setImagenUrl1] = useState(mural.imagen1);
+  const [imagenUrl2, setImagenUrl2] = useState(mural.imagen2);
+  const [imagenUrl3, setImagenUrl3] = useState(mural.imagen3);
 
 
   const handleClick = () => {
@@ -33,26 +33,7 @@ export function MuralCard({ mural }) {
     fetchMuralista();
   }, [mural.id_muralista]);
 
-  useEffect(() => {
-    if (mural.imagen1) {
-      const base64Image = `data:image/jpeg;base64,${mural.imagen1}`;
-      setImagenUrl1(base64Image);
-    }
-  }, [mural.imagen1]);
-
-  useEffect(() => {
-    if (mural.imagen2) {
-      const base64Image = `data:image/jpeg;base64,${mural.imagen2}`;
-      setImagenUrl2(base64Image);
-    }
-  }, [mural.imagen2]);
-
-  useEffect(() => {
-    if (mural.imagen3) {
-      const base64Image = `data:image/jpeg;base64,${mural.imagen3}`;
-      setImagenUrl3(base64Image);
-    }
-  }, [mural.imagen3]);
+  
 
   return (
     <div
@@ -73,21 +54,21 @@ export function MuralCard({ mural }) {
         </h1>
         <p className="text-slate-400">{mural.fecha_creacion}</p>
       </div>
-      <h1 className="text-2xl font-bold text-white mb-2">Imagen:</h1>
+      <h1 className="text-2xl font-bold text-white mb-2">Imagenes:</h1>
       <div className="flex items-center justify-between mb-4">
         <div className="grid grid-cols-3 gap-3">
           <img
-            src={imagenUrl1}
+            src={mural.imagen1}
             alt="Foto del mural"
             className="w-32 h-32 object-cover mr-3"
           />
           <img
-            src={imagenUrl2}
+            src={mural.imagen2}
             alt="Foto del mural"
             className="w-32 h-32 object-cover mr-3"
           />
           <img
-            src={imagenUrl3}
+            src={mural.imagen3}
             alt="Foto del mural"
             className="w-32 h-32 object-cover mr-3"
           />

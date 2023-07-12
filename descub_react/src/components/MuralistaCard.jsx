@@ -20,7 +20,7 @@ export function MuralistaCard({ muralista }) {
     >
       <div className="flex items-center justify-center">
         <img
-          src={`data:image/jpeg;base64,${fotoUrl}`}
+          src={muralista.foto}
           alt="Foto del muralista"
           className="w-32 h-32 object-cover rounded-full border-4 border-zinc-500"
         />
